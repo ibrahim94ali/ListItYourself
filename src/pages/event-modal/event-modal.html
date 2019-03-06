@@ -1,0 +1,61 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Event Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" placeholder="Title" [(ngModel)]="event.title"></ion-input>
+    </ion-item>
+    <div *ngIf="!event.allDay">
+    <ion-item>
+      <ion-label>Start: </ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="DD/MM/YYYY HH:mm" [(ngModel)]="event.startTime" [min]="minDate" [max]="maxDate"></ion-datetime>
+      </ion-item>
+      <ion-item>
+          <ion-label>End: </ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY HH:mm" pickerFormat="DD/MM/YYYY HH:mm" [(ngModel)]="event.endTime" [min]="event.startTime" [max]="maxDate"></ion-datetime>
+          </ion-item>
+      </div>
+      <div *ngIf="event.allDay">
+        <ion-item>
+      <ion-label>Start: </ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="event.startTime" [min]="minDate" [max]="maxDate"></ion-datetime>
+      </ion-item>
+      <ion-item>
+          <ion-label>End: </ion-label>
+            <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="event.endTime" [min]="event.startTime" [max]="maxDate"></ion-datetime>
+          </ion-item>
+        </div>
+
+      <ion-item>
+        <ion-label>All Day? </ion-label>
+          <ion-checkbox [(ngModel)]="event.allDay"></ion-checkbox>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="text" placeholder="Location" [(ngModel)]="event.location"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-input type="text" placeholder="Additional Note" [(ngModel)]="event.note"></ion-input>
+        </ion-item>
+
+        <ion-item (click)="showRadio()">
+          <ion-label>Set an Alarm: </ion-label>
+          </ion-item>
+  
+
+  </ion-list>
+
+  <button ion-button full icon-left (click)="save()">
+    <ion-icon name="checkmark"></ion-icon> Save
+  </button>
+
+</ion-content>

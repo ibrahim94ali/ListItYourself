@@ -1,0 +1,53 @@
+<ion-header>
+
+  <ion-navbar>
+   
+    <ion-buttons end>
+        <button ion-button (click)="addPerson()">
+            Add Person &emsp;
+          <ion-icon name="add"></ion-icon>
+          </button>
+          &emsp; &emsp;  
+        <button ion-button (click)="addItem()">
+            Add Item &emsp;
+          <ion-icon name="add"></ion-icon>
+          </button> 
+        </ion-buttons> 
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h3 id="head">Header</h3>
+        <ion-item>
+          <ion-input  type="text" placeholder="Header" [(ngModel)]="list.header"></ion-input>
+        </ion-item>
+        <h3 id="people">People</h3>
+        <ion-list>
+          <ion-item *ngFor="let ppl of list.people; let j = index; trackBy: customTrackByPpl">
+              
+               <ion-input type="text" placeholder="new person's email" [(ngModel)]="list.people[j]"></ion-input>  
+             
+            </ion-item>  
+          </ion-list>
+          <h3 id="list">List</h3>
+        <ion-list>
+        <ion-item *ngFor="let it of list.items; let i = index; trackBy: customTrackBy">
+            
+             <ion-input type="text" placeholder="new item" [(ngModel)]="list.items[i].item"></ion-input>  
+           
+          </ion-item>  
+        </ion-list>
+        <ion-list>
+          <ion-item>
+            <ion-label>Set an event for deadline? </ion-label>
+              <ion-checkbox  [(ngModel)]="list.deadline" ></ion-checkbox>
+            </ion-item>    
+      </ion-list>
+
+      <button ion-button full icon-left (click)="save()">
+          <ion-icon name="checkmark"></ion-icon> Save
+        </button>
+
+</ion-content>

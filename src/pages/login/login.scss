@@ -1,0 +1,38 @@
+
+login {
+.buttons {
+    text-align: center;
+}
+
+.forgot {
+    margin-top: 0.5em;
+    text-align: right;
+}
+#logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+#forgot{
+    color: rgb(28,41,80);
+    background-color: white;
+}
+#signup{
+    color: rgb(106,181,26);
+    background-color: white;
+    width: 14em;
+}
+#signin{
+    background-color: rgb(28,41,80);
+    width: 10em;
+}
+
+#user{
+    margin-top: 2em;
+}
+#notmember{
+    text-align: center;
+    margin-top: 4em;
+}
+}

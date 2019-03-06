@@ -1,0 +1,25 @@
+<ion-content padding>
+
+  <h3 id="header">My Group Lists</h3>
+
+  <ion-buttons end>
+      <button ion-button (click)="addList()">
+          Add List &emsp;
+        <ion-icon name="add"></ion-icon>
+        
+      </button>
+    </ion-buttons>
+
+  <ion-card>
+      <ion-card-header>
+        List Headers: {{number}}
+      </ion-card-header>
+    
+      <ion-list>
+        <button ion-item *ngFor="let list of lists" (click)="presentActionSheet(list)">
+          {{list.header}}
+        </button>     
+      </ion-list>
+    </ion-card>         
+
+</ion-content>

@@ -1,0 +1,78 @@
+<!--
+  Generated template for the CalendarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      {{viewTitle}}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addEvent()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-toolbar>
+      <ion-segment [(ngModel)]="seg" (ionChange)="segmentChanged($event)">
+        <ion-segment-button value="month">
+          Monthly
+        </ion-segment-button>
+        <ion-segment-button value="week">
+           Weekly
+        </ion-segment-button>
+        <ion-segment-button value="day">
+            Daily
+            </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content  [ngSwitch]="seg">
+      
+              <calendar *ngSwitchCase="'month'"
+                [eventSource]="eventSource"
+                [startingDayMonth] = "calendar.startingDayMonth"
+                [calendarMode]="calendar.mode"
+                [currentDate]="calendar.currentDate"
+                (onEventSelected)="onEventSelected($event)"
+                (onTitleChanged)="onViewTitleChanged($event)"
+                (onTimeSelected)="onTimeSelected($event)"
+                step="30"
+                class="calendar">
+              </calendar>
+
+      
+  <calendar *ngSwitchCase="'week'"
+  [eventSource]="eventSource"
+  [startingDayMonth] = "calendar.startingDayMonth"
+  [calendarMode]="calendar.mode"
+  [currentDate]="calendar.currentDate"
+  (onEventSelected)="onEventSelected($event)"
+  (onTitleChanged)="onViewTitleChanged($event)"
+  (onTimeSelected)="onTimeSelected($event)"
+  step="30"
+  class="calendar">
+</calendar>
+   
+
+
+<calendar *ngSwitchCase="'day'"
+[eventSource]="eventSource"
+[startingDayMonth] = "calendar.startingDayMonth"
+[calendarMode]="calendar.mode"
+[currentDate]="calendar.currentDate"
+(onEventSelected)="onEventSelected($event)"
+(onTitleChanged)="onViewTitleChanged($event)"
+(onTimeSelected)="onTimeSelected($event)"
+step="30"
+class="calendar">
+</calendar>
+
+</ion-content>

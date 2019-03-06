@@ -1,0 +1,38 @@
+  
+  <ion-content padding>
+      <img id="logo" src="../../assets/imgs/logowtext.png" alt="Logo">
+      
+                <ion-item id="user">
+                  <ion-label floating>Email</ion-label>
+                  <ion-input type="text" [(ngModel)]="user.usernameemail"></ion-input>
+                </ion-item>
+              
+                <ion-item>
+                  <ion-label floating>Password</ion-label>
+                  <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+                </ion-item>
+
+                <div class="forgot">
+                    <button ion-button id="forgot" (click)="forgotPassword()">
+                        <b>Forgot Password? </b>
+                      </button>
+                      </div>
+              
+            <div>
+                    <div class="buttons">
+                            <button ion-button round icon-end id="signin" (click)="signIn()">
+                                  Sign In
+                                  <ion-icon name="send"></ion-icon>
+                                </button>
+                          </div>
+                          <h6 id="notmember">Not a member? </h6>
+                          
+                        <div class = "buttons">
+                          <button ion-button outline id="signup" (click)="signUp()">
+                              <b>Register with Email</b>
+                            </button>
+                            </div>
+                  </div>
+  
+  </ion-content>
+  

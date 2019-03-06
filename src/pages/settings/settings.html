@@ -1,0 +1,33 @@
+
+  <ion-content padding>
+      <ion-list>
+          <ion-item id="items" (click)="emailAlert()">
+            
+                <ion-icon name="mail" item-start></ion-icon>
+           
+            <h2>Change Email</h2>
+          </ion-item>
+         
+          <ion-item id="items" (click)="passwordAlert()">
+             
+                  <ion-icon name="key" item-start></ion-icon>
+             
+              <h2>Change Password</h2>
+            </ion-item>
+            <ion-item id="items" (click)="infoAlert()">
+                
+                    <ion-icon name="person" item-start></ion-icon>
+                
+                <h2>Change Personal Information</h2>
+              </ion-item>
+        </ion-list>
+
+        <div class="buttons">
+            <button ion-button round icon-end id="signin" (click)="logout()">
+                  Sign Out
+                  <ion-icon name="exit"></ion-icon>
+                </button>
+          </div>
+        
+  </ion-content>
+  
